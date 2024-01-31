@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+  <title>Typer</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" />
+  <link href="typer.css" rel="stylesheet" />
+  
+</head>
+
+<body>
+
+  <audio id="myAudio" controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="road-to-nowhere_long-188064.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio><br>
+  
+  <button onclick="enableAutoplay()" type="button">Enable autoplay</button>
+  <button onclick="disableAutoplay()" type="button">Disable autoplay</button>
+  <button onclick="checkAutoplay()" type="button">Check autoplay status</button>
+  
+  <script>
+  var x = document.getElementById("myAudio");
+  
+  function enableAutoplay() { 
+    x.autoplay = true;
+    x.load();
+  }
+   
+  function disableAutoplay() { 
+    x.autoplay = false;
+    x.load();
+  } 
+    
+  function checkAutoplay() { 
+    alert(x.autoplay);
+  } 
+  </script> 
+  <a class="btn btn-lg btn-info change-case" onclick="changeCase()" accesskey="c"><span class="glyphicon glyphicon-refresh"></span> <span style="text-decoration: underline">C</span>ase <span id="change-case"></span>sensitive</a>
+  <canvas id="canvas">Your browser doesn't support HTML5.</canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fpsmeter/0.3.1/fpsmeter.min.js"></script>
+  <script src="typer.js"></script>
+  
+</body>
+
+</html>
